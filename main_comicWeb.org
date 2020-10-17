@@ -1,0 +1,108 @@
+* image部分
+大部分指示  和过程 在 手机xmind上
+** DONE 图片+文字
+CLOSED: [2020-10-17 六 17:51]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2020-10-17 六 17:51]
+:END:
+1. 文字在图片上方竖着显示
+2. 大小要合适
+3. 位置是相对在两侧的
+*** 1. [[https://blog.csdn.net/zhengbingmei/article/details/81134759][一篇参考]]
+直接作为背景:
+1. 文字的位置不知道如何控制
+2. 为了补全长宽限制 图片会有重复的问题
+#+BEGIN_SRC html
+  <div style="background-image: url({% static "/images/test3.jpg" %}) ;no-repeat;width:500px;height:300px">添加文字 </div>
+
+#+END_SRC
+
+
+div :将img块与文字块（文字块采用span标签显示）放在同一个div 中，然后设置他们之间的位置，例如如下代码块：
+能够使用
+#+BEGIN_SRC html
+  <div style="position: relative; width: 170px; height: 89px;">
+
+    <img src="{% static '/images/Flufft-Cat.jpeg' %}" width="170" height="89" alt="">
+
+    <span style="position: absolute; top: 0; left: 0;">添加文字 </span>
+
+  </div>
+
+
+#+END_SRC
+
+
+
+将img块与文字块（文本块存放在div中）放在同一个div 中，然后设置他们之间的位置
+#+BEGIN_SRC html
+  <div style="position:relative;">
+
+    　　<img src="{% static '/images/Flufft-Cat.jpeg' %}" />
+
+    　　<div style="position:absolute; z-index:2; left:10px; top:10px">添加文字...添加文字...添加文字...</div>
+
+
+#+END_SRC
+
+*** DONE 文字在图片上方显示
+CLOSED: [2020-10-17 六 17:51]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2020-10-17 六 17:51]
+:END:
+1. 文字和图片的位置对应 大小对应是不会变化的
+**** DONE 图片占满屏幕
+CLOSED: [2020-10-17 六 16:42]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2020-10-17 六 16:42]
+:END:
+**** DONE 文字在上方 控制大小
+CLOSED: [2020-10-17 六 16:44]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2020-10-17 六 16:44]
+:END:
+*** DONE 文字在图片上竖着显示
+CLOSED: [2020-10-17 六 16:46]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2020-10-17 六 16:46]
+:END:
+#+BEGIN_SRC html
+m1
+{
+        font-family:"Times New Roman";
+        font-size:100px;
+        writing-mode : tb-rl ;
+}
+
+        <m1> 哈哈</m1>
+
+
+#+END_SRC
+*** DONE 文字在图片上竖着两侧显示
+CLOSED: [2020-10-17 六 17:50]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2020-10-17 六 17:50]
+:END:
+1. 相对位置 在两边
+#+BEGIN_SRC html
+        left:40%; top:10px
+
+
+#+END_SRC
+** TODO 文字的修改  :能使用html修改就好
+** TODO 多张图片的连续显示
+可能要使用别人的框架了 反正基本的效果已经实现了
+*** TODO 其他网站的copy
+*** TODO for循环 见老齐
+*** TODO django listview
+** TODO 图片与文字的复杂结合
+使用数据库保存
+1. 文字内容
+2. 图片顺序
+3. 文字和图片的对应
+** 图片的存储与管理
+** TODO 适应手机ui的方法
+** TODO 更多图片的显示优化
+*** TODO 气泡显示 而不是简单的
+** 图片与图片叠加 后续会用上
+1. [[https://blog.csdn.net/u010773667/article/details/50761635][一篇参考]]
